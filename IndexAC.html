@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Connect Chat Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #123456;
+    }
+  </style>
+</head>
+<body>
+  <h1>Amazon Connect Chat Demo</h1>
+  <p>Click the chat button in the bottom-right corner to start a conversation.</p>
+
+  <!-- Amazon Connect Chat Widget -->
+  <script type="text/javascript">
+    (function(w, d, x, id){
+      s = d.createElement('script');
+      s.src = 'https://nsjkkac.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+      s.async = 1;
+      s.id = id;
+      d.getElementsByTagName('head')[0].appendChild(s);
+      w[x] = w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+    })(window, document, 'amazon_connect', '70a003a6-9ad0-4bc5-b884-8b1703502f43');
+
+    // Chat widget styling + setup
+    amazon_connect('styles', { 
+      iconType: 'CHAT_VOICE',
+      openChat: { color: '#ffffff', backgroundColor: '#123456' }, 
+      closeChat: { color: '#ffffff', backgroundColor: '#123456' }
+    });
+
+    amazon_connect('snippetId', 'QVFJREFIaEFpZC9qKzF2OGFUT3pGdzRueCtKR2w1QmV1RmxLV3d2TVIzUEs2d1ZwVlFGeHRNQm1sUjRTQTlsRCtWSWJLYVh4QUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNVGVISTRyK3FJR0VoSTgxb0FnRVFnQ3VmdG9mSXc0RjJDald0azA5SGdPbUxGUExiM2NURnZxYjg2ODlpRzdteS96RURpa2xFZ0ZubnduOFI6OlZWeDNVamFtcTBKWU9vTU5PVW1scnpzUUlXM0dRUnRDT3FvYUVIbWM0NXFrLzR0S2ZNSTdFL25ZZktpb20vd2Y5dnhUZzNXUmJBT3k1am5DQWRGeDYzbjR6a3YvbDhlUFVWRytRV2pJWlZrbzZRWDBUWGEvdmJ1TndxaVVPVjJGTGhBUlFMdUROSUZSMlNvRmNQMU5HQmpBZEFrQ0FHMD0=');
+
+    amazon_connect('supportedMessagingContentTypes', [ 
+      'text/plain', 
+      'text/markdown', 
+      'application/vnd.amazonaws.connect.message.interactive', 
+      'application/vnd.amazonaws.connect.message.interactive.response' 
+    ]);
+  </script>
+</body>
+</html>
